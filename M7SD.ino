@@ -22,6 +22,13 @@ void setup() {
   pinMode(latch, OUTPUT);
   Serial.begin(9600);
 }
+
+//We create an if loop such that if the value of the bits read is positive, i.e. 
+//if there is a character input, then we declare n as the new Serial.available.
+//If n is greater than or equal to 4, i.e. the minimum number of bits to display a value, 
+//then we create a for loop which, for each character entered on the keyboard, will match its
+//binary code into hexadecimal and then display it. Otherwise, it will display "ERROR".
+
 void loop(){
   if(Serial.available() > 0){
       n = Serial.available();
